@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "name": "Data Bees",
+  "launch_path": "/index.html",
+  "description": "Data input assistant",
+  "developer": {
+    "name": "Data Bees",
+    "url": "https://firebase.google.com"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  },
+  "locales": {
+    "en": {
+      "name": "Data Bees",
+      "description": "Data input assistant"
+    }
+  }
+}
