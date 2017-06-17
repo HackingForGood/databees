@@ -46,9 +46,9 @@ exports.addWelcomeMessages = functions.auth.user().onCreate(event => {
   // Saves the new welcome message into the database
   // which then displays it in the FriendlyChat clients.
   return admin.database().ref('messages').push({
-    name: 'Firebase Bot',
-    photoUrl: '/images/firebase-logo.png', // Firebase logo
-    text: `${fullName} signed in for the first time! Welcome!`
+    name: 'Data Bee',
+    photoUrl: '/images/bee-logo.jpg', // Firebase logo
+    text: `Welcome, ${fullName}!`
   });
 });
 
