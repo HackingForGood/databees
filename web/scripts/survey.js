@@ -1,5 +1,7 @@
 'use strict';
 
+Survey.Survey.cssType = "bootstrap";
+
 var surveyJSON = { title: "Tell us, what technologies do you use?", pages: [
     { name:"page1", questions: [ 
             { type: "radiogroup", choices: [ "Yes", "No" ], isRequired: true, name: "frameworkUsing",title: "Do you use any front-end framework like Bootstrap?" },
@@ -19,7 +21,14 @@ $("#surveyContainer").Survey({
       onComplete: sendDataToServer
 });
 
-function sendDataToServer() {
-    console.log("Sending data to server...");
-    // TODO
+function sendDataToServer(survey) {
+    var resultAsString = JSON.stringify(survey.data);
+
+    // Push result to firebase database
+    firebase.database().ref('messages').push({
+        name: 'Data Bee',
+        photoUrl: '/images/bee-logo.jpg',
+        text: `Survey result saved: ${resultAsString}`
+    });
 }
+
