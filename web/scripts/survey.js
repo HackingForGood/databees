@@ -21,4 +21,5 @@ $("#surveyContainer").Survey({
 
 function sendDataToServer() {
     console.log("Sending data to server...");
+    // TODO
 }
