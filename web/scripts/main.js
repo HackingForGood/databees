@@ -97,6 +97,16 @@ FriendlyChat.prototype.saveMessage = function(e) {
     }.bind(this)).catch(function(error) {
       console.error('Error writing new message to Firebase Database', error);
     });
+
+    // Send request to api.ai
+    requestApiAi(this.messageInput.value, currentUser.uid, function(response) {
+      console.log(response);
+      firebase.database().ref('messages').push({
+        name: 'Data Bee',
+        photoUrl: '/images/bee-logo.jpg',
+        text: `${response.result.fulfillment.speech}`
+      });
+    })
   }
 };
 

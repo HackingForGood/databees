@@ -2,8 +2,9 @@
   "name": "databees",
   "description": "Data input assistant",
   "dependencies": {
+    "apiai": "^4.0.2",
     "firebase-admin": "^4.1.1",
-    "firebase-functions": "^0.5.1",
+    "firebase-functions": "^0.5.7",
     "survey-jquery": "^0.12.17"
   }
 }
